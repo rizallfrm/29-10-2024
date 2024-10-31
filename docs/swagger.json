@@ -1,0 +1,143 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Shops API",
+    "description": "API for retrieving shops and their associated products and users",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/api/v1/shops": {
+      "get": {
+        "summary": "Retrieve list of shops",
+        "description": "Fetches a list of shops with products and associated user data",
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "Success"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Success get shops data"
+                    },
+                    "isSuccess": {
+                      "type": "boolean",
+                      "example": true
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "shops": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "id": { "type": "integer", "example": 1 },
+                              "name": {
+                                "type": "string",
+                                "example": "Bahringer and Sons"
+                              },
+                              "userId": { "type": "integer", "example": 1 },
+                              "createdAt": {
+                                "type": "string",
+                                "format": "date-time",
+                                "example": "2024-10-22T12:51:21.234Z"
+                              },
+                              "updatedAt": {
+                                "type": "string",
+                                "format": "date-time",
+                                "example": "2024-10-22T12:51:21.234Z"
+                              },
+                              "products": {
+                                "type": "array",
+                                "items": {
+                                  "type": "object",
+                                  "properties": {
+                                    "id": { "type": "integer", "example": 1 },
+                                    "name": {
+                                      "type": "string",
+                                      "example": "Handmade Rubber Soap"
+                                    },
+                                    "images": {
+                                      "type": "array",
+                                      "items": {
+                                        "type": "string",
+                                        "format": "uri",
+                                        "example": "https://ik.imagekit.io/imamth/Profile-17-1729202156932_ieaMdNeZB.png?updatedAt=1729202158471"
+                                      }
+                                    },
+                                    "stock": {
+                                      "type": "integer",
+                                      "example": 18
+                                    },
+                                    "price": {
+                                      "type": "integer",
+                                      "example": 35936
+                                    },
+                                    "shopId": {
+                                      "type": "integer",
+                                      "example": 1
+                                    },
+                                    "createdAt": {
+                                      "type": "string",
+                                      "format": "date-time",
+                                      "example": "2024-10-22T12:51:21.247Z"
+                                    },
+                                    "updatedAt": {
+                                      "type": "string",
+                                      "format": "date-time",
+                                      "example": "2024-10-22T12:51:21.247Z"
+                                    }
+                                  }
+                                }
+                              },
+                              "user": {
+                                "type": "object",
+                                "properties": {
+                                  "id": { "type": "integer", "example": 1 },
+                                  "name": {
+                                    "type": "string",
+                                    "example": "Joyce Gulgowski Sr."
+                                  },
+                                  "age": { "type": "integer", "example": 14 },
+                                  "address": {
+                                    "type": "string",
+                                    "example": "44155 Park Crescent"
+                                  },
+                                  "role": {
+                                    "type": "string",
+                                    "example": "user"
+                                  },
+                                  "createdAt": {
+                                    "type": "string",
+                                    "format": "date-time",
+                                    "example": "2024-10-22T12:51:14.357Z"
+                                  },
+                                  "updatedAt": {
+                                    "type": "string",
+                                    "format": "date-time",
+                                    "example": "2024-10-22T12:51:14.357Z"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
